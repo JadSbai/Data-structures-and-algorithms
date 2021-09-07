@@ -1,8 +1,6 @@
 package Sorting;
 
-/* Java program for Merge Sort */
-
-class MergeSort
+public class MergeSort
 {
     static int swapCount = 0;
     // Merges two subarrays of arr[].
@@ -38,8 +36,8 @@ class MergeSort
             }
             else {
                 arr[k] = R[j];
+                swapCount += (m+1) - (l +i);
                 j++;
-                swapCount+=(m + 1) - (l + i);;
             }
 
             k++;
@@ -87,27 +85,5 @@ class MergeSort
         System.out.println();
     }
 
-    // Driver code
-    public static void main(String args[])
-    {
-        int arr[] = { 7,5,3,1};
-
-        System.out.println("Given Array");
-        printArray(arr);
-
-        MergeSort ob = new MergeSort();
-        ob.sort(arr, 0, arr.length - 1);
-        System.out.println(MergeSort.swapCount);
-        System.out.println("\nSorted array");
-        printArray(arr);
-    }
-
-//    public static long countInversions(List<Integer> arr) {
-//        MergeSort ob = new MergeSort();
-//        int[] array = arr.stream().mapToInt(Integer::intValue).toArray();
-//        ob.sort(array, 0, array.length - 1);
-//        System.out.println(MergeSort.swapCount);
-//    }
 }
-
 
